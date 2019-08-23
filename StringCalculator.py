@@ -6,11 +6,10 @@ def add(numbers):
     elif len(numbers) == 1:
         return int(numbers)
     elif numbers[0] == '/':
-	    result = 0
 	    my_delim = ""
 	    line_split = numbers.split('\n')
-	    length = len(line_split[0])
-	    for char in range(2,length):
+	    lengths = len(line_split[0])
+	    for char in range(2,lengths):
 		    my_delim += line_split[0][char]
 	    my_num = line_split[1].split(my_delim)
 	#my_delim = numbers[start_delim]
@@ -22,17 +21,17 @@ def add(numbers):
 
 
     else:
-	    result
-	    my_delim = ""
-	    if numbers[1] != ',':
+	    my_delim = ","
+	    if numbers[1] != ",":
 		    my_delim = "\n"
 	    my_num = numbers.split(my_delim)
-	# for digit in my_num:
-		# result += int(my_num)
 	    return more_numbers(my_num)
 
-def more_numbers(my_num):
+def more_numbers(numbers):
     result = 0
-    for digit in my_num:
-        result += int(digit)
+    for digit in str(numbers):
+        try:
+            result += int(digit)
+        except ValueError:
+            print(AssertionError)
     return result
