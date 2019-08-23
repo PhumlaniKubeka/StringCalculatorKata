@@ -12,11 +12,6 @@ def add(numbers):
 	    for char in range(2,lengths):
 		    my_delim += line_split[0][char]
 	    my_num = line_split[1].split(my_delim)
-	#my_delim = numbers[start_delim]
-	# if numbers[(start_delim+1)] != '\\':
-		#my_delim = my +numbers[start_delim]
-		#start_delim += 1
-	#my_num = numbers.split('\n')[1].split(my_delim)
 	    return more_numbers(my_num)
 
 
