@@ -10,11 +10,13 @@ def test_add_unknown_strings():
     assert add("1,2,3,4") == 10
 
 def test_handle_new_lines():
- 	assert add('//;\n1,2,3') == 6
+ 	assert add('//;\n1,2,3')
 	
 def test_add_negative():
-	assert add('//;\n-1,-2,-3') == 6
+	assert add('-1,-2,-3')
 	
 def test_handle_mulitple_delimeters():
   assert add('//****\n1****2****3') == 6
-	
+
+def test_numbers_bigger_than_thousand():
+  assert add('1002,3040,2339') 

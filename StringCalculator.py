@@ -1,10 +1,12 @@
-import math
+import math, re
 def add(numbers):
 
     if len(numbers) == 0:
             return 0
     elif len(numbers) == 1:
         return int(numbers)
+    elif re.match('-[0-9]+', numbers):
+        raise ValueError("negatives not allowed {}".format(re.findall('-[0-9]+', numbers)))          
     elif numbers[0] == '/':
 	    my_delim = ""
 	    line_split = numbers.split('\n')
@@ -13,8 +15,6 @@ def add(numbers):
 		    my_delim += line_split[0][char]
 	    my_num = line_split[1].split(my_delim)
 	    return more_numbers(my_num)
-
-
     else:
 	    my_delim = ","
 	    if numbers[1] != ",":
